@@ -3,10 +3,10 @@ name: Deploy to S3
 on:
   push:
     branches:
-      - main
+      - /Curriculum-vitae-online
   pull_request:
     branches:
-      - main
+      - /Curriculum-vitae-online
 
 jobs:
   deploy:
