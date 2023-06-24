@@ -30,5 +30,6 @@ jobs:
         echo "region=$AWS_DEFAULT_REGION" >> ~/.aws/config
     
     - name: Deploy to S3
-      run: aws s3 sync $GITHUB_WORKSPACE/Curriculum-vitae-online s3://cvenligne --delete
+      run: aws s3 sync $GITHUB_WORKSPACE s3://cvenligne --delete
+
 
