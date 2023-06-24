@@ -29,10 +29,6 @@ jobs:
         echo "[default]" > ~/.aws/config
         echo "region=$AWS_DEFAULT_REGION" >> ~/.aws/config
     
-    
-
-        
     - name: Deploy to S3
       run: |
-       aws s3 sync ./Curriculum-vitae-online s3://cvenligne --delete
-
+        aws s3 sync ./Curriculum-vitae-online s3://cvenligne --delete
