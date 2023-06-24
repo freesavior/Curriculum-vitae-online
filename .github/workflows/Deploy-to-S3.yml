@@ -11,7 +11,7 @@ on:
     
 env:
   AWS_ACCESS_KEY_ID: AKIAZ4QMWYENVI2ITI2I
-  AWS_SECRET_ACCESS_KEY: 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
+  AWS_SECRET_ACCESS_KEY:  zgzbb99sZ7/KtyUnCfpOqUe26VABJAR/Vxj1zPUe
   AWS_REGION: eu-west-1
 
 jobs:
@@ -29,7 +29,11 @@ jobs:
         run: |
           echo $AWS_ACCESS_KEY_ID > ~/.aws/credentials
           echo $AWS_SECRET_ACCESS_KEY >> ~/.aws/credentials
-          echo $AWS_REGION >> ~/.aws/config
+
+      - name: Set up AWS configuration
+        run: |
+          echo "[default]" > ~/.aws/config
+          echo "region = $AWS_REGION" >> ~/.aws/config
 
       - name: Deploy to S3
         run: aws s3 sync . s3://cvenligne --delete  # Change your-bucket-name to your actual S3 bucket name
