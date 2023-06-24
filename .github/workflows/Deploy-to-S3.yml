@@ -3,10 +3,10 @@ name: Deploy to S3
 on:
   push:
     paths:
-      - 'Curriculum-vitae-online/**'
+      - '/freesavior/Curriculum-vitae-online/**'
   pull_request:
     paths:
-      - 'Curriculum-vitae-online/**'
+      - '/freesavior/Curriculum-vitae-online/**'
   workflow_dispatch:
     
 
