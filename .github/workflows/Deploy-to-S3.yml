@@ -28,6 +28,10 @@ jobs:
         echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/credentials
         echo "[default]" > ~/.aws/config
         echo "region=$AWS_DEFAULT_REGION" >> ~/.aws/config
+    
+    - name: Check directory content
+      run: ls -al ./Curriculum-vitae-online
+
         
     - name: Deploy to S3
       run: |
