@@ -3,16 +3,15 @@ name: Deploy to S3
 on:
   push:
     paths:
-      - '/freesavior/Curriculum-vitae-online/**'
+      - '/Curriculum-vitae-online/**'
   pull_request:
     paths:
-      - '/freesavior/Curriculum-vitae-online/**'
+      - '/Curriculum-vitae-online/**'
   workflow_dispatch:
     
 env:
   AWS_ACCESS_KEY_ID: AKIAZ4QMWYENVI2ITI2I
   AWS_SECRET_ACCESS_KEY:  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
-  AWS_REGION: eu-west-1
 
 jobs:
   deploy:
@@ -27,13 +26,9 @@ jobs:
 
       - name: Set up AWS credentials
         run: |
-          echo $AWS_ACCESS_KEY_ID > ~/.aws/credentials
-          echo $AWS_SECRET_ACCESS_KEY >> ~/.aws/credentials
-
-      - name: Set up AWS configuration
-        run: |
-          echo "[default]" > ~/.aws/config
-          echo "region = $AWS_REGION" >> ~/.aws/config
+          echo "[default]" > ~/.aws/credentials
+          echo "aws_access_key_id = $AWS_ACCESS_KEY_ID" >> ~/.aws/credentials
+          echo "aws_secret_access_key = $AWS_SECRET_ACCESS_KEY" >> ~/.aws/credentials
 
       - name: Deploy to S3
         run: aws s3 sync . s3://cvenligne --delete  # Change your-bucket-name to your actual S3 bucket name
