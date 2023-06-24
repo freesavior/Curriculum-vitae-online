@@ -30,7 +30,7 @@ jobs:
         echo "region=$AWS_DEFAULT_REGION" >> ~/.aws/config
     
     - name: Check directory content
-      run: ls -al freesavior/Curriculum-vitae-online
+      run: ls -al Curriculum-vitae-online
       
     - name: Deploy to S3
       run: aws s3 sync . s3://cvenligne --delete
