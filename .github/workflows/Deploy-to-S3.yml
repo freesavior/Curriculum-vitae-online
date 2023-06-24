@@ -22,6 +22,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: zgzbb99sZ7/KtyUnCfpOqUe26VABJAR/Vxj1zPUe
         AWS_DEFAULT_REGION: eu-west-1 # Remplacez par votre région AWS (par exemple: us-east-1)
       run: |
+        mkdir -p ~/.aws/
         echo "[default]" > ~/.aws/credentials
         echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/credentials
         echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/credentials
