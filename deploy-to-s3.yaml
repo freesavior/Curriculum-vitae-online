@@ -1,0 +1,27 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: AKIAZ4QMWYENVI2ITI2I
+          aws-secret-access-key: zgzbb99sZ7/KtyUnCfpOqUe26VABJAR/Vxj1zPUe
+          aws-region: eu-west-1
+
+      - name: Deploy to S3
+        run: aws s3 sync . s3://cvenligne --delete  # Change your-bucket-name to your actual S3 bucket name
