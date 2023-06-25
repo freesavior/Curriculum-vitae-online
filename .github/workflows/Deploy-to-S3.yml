@@ -18,8 +18,8 @@ jobs:
 
     - name: Set up AWS credentials
       env:
-        AWS_ACCESS_KEY_ID: AKIAZ4QMWYENVI2ITI2I
-        AWS_SECRET_ACCESS_KEY: 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
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_DEFAULT_REGION: eu-west-1 # Remplacez par votre région AWS (par exemple: us-east-1)
       run: |
         mkdir -p ~/.aws/
