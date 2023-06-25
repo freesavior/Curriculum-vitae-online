@@ -6,15 +6,15 @@ La chaîne CI/CD permettra d'automatiser le processus de déploiement en intégr
 
 Pour mettre cela en place, voici les étapes générales que vous pouvez suivre :
 
-# Créez votre site CV en utilisant HTML5 et CSS. Assurez-vous que votre structure de fichiers est correcte et que tous les fichiers nécessaires (HTML, CSS, images, etc.) sont inclus.
+ Créez votre site CV en utilisant HTML5 et CSS. Assurez-vous que votre structure de fichiers est correcte et que tous les fichiers nécessaires (HTML, CSS, images, etc.) sont inclus.
 
-# Créez un compte AWS si vous n'en avez pas déjà un, puis configurez un bucket S3 pour héberger votre site CV. Assurez-vous d'obtenir les clés d'accès (Access Key) et les informations de secret (Secret Key) nécessaires pour accéder à votre compte AWS via l'interface de gestion AWS.
+Créez un compte AWS si vous n'en avez pas déjà un, puis configurez un bucket S3 pour héberger votre site CV. Assurez-vous d'obtenir les clés d'accès (Access Key) et les informations de secret (Secret Key) nécessaires pour accéder à votre compte AWS via l'interface de gestion AWS.
 
-# Configurez les secrets AWS_ACCESS_KEY_ID et AWS_SECRET_ACCESS_KEY dans votre dépôt GitHub à l'aide de la commande gh secret set. Ces secrets seront utilisés par la chaîne CI/CD pour accéder à votre compte AWS lors du déploiement, ces étapes sont détaillées plus bas.
+Configurez les secrets AWS_ACCESS_KEY_ID et AWS_SECRET_ACCESS_KEY dans votre dépôt GitHub à l'aide de la commande gh secret set. Ces secrets seront utilisés par la chaîne CI/CD pour accéder à votre compte AWS lors du déploiement, ces étapes sont détaillées plus bas.
 
-# Créez un fichier YAML de workflow dans le répertoire .github/workflows de votre dépôt. Ce fichier YAML définira les étapes nécessaires pour déployer votre site CV sur AWS S3. Vous devrez utiliser les actions GitHub appropriées pour effectuer des actions telles que la vérification du code, l'installation des dépendances, la synchronisation avec S3, etc.
+Créez un fichier YAML de workflow dans le répertoire .github/workflows de votre dépôt. Ce fichier YAML définira les étapes nécessaires pour déployer votre site CV sur AWS S3. Vous devrez utiliser les actions GitHub appropriées pour effectuer des actions telles que la vérification du code, l'installation des dépendances, la synchronisation avec S3, etc.
 
-# Dans votre fichier YAML de workflow, référencez les secrets AWS_ACCESS_KEY_ID et AWS_SECRET_ACCESS_KEY que vous avez configurés précédemment en utilisant la syntaxe ${{ secrets.NOM_DU_SECRET }}.
+Dans votre fichier YAML de workflow, référencez les secrets AWS_ACCESS_KEY_ID et AWS_SECRET_ACCESS_KEY que vous avez configurés précédemment en utilisant la syntaxe ${{ secrets.NOM_DU_SECRET }}.
 
 Une fois que vous avez configuré votre fichier YAML de workflow, effectuez un commit et un push dans votre dépôt GitHub. Cela déclenchera automatiquement la chaîne CI/CD et votre site CV sera déployé sur AWS S3.
 Chaque fois que vous apportez des modifications à votre site CV et les poussez dans votre dépôt GitHub, la chaîne CI/CD sera à nouveau déclenchée et votre site sera mis à jour sur AWS S3.
