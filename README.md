@@ -1,3 +1,10 @@
+<style>
+body {
+  font-family: Arial, sans-serif;
+}
+</style>
+
+
 # Curriculum-vitae-online
 
 L'objectif est de créer un site CV en utilisant HTML5 et CSS, puis de l'héberger sur un serveur de stockage comme Amazon S3 (Simple Storage Service), ensuite  mettre en place une chaîne CI/CD (Continuous Integration/Continuous Deployment) pour déclencher automatiquement le déploiement du site à chaque modification effectuée en ligne.
@@ -32,6 +39,8 @@ Connectez-vous à votre compte GitHub en exécutant la commande suivante :
 # Ajoutez vos secrets AWS en utilisant la commande suivante :
 gh secret set AWS_ACCESS_KEY_ID --repo "nom d'utilisateur/nom du repo" 
 gh secret set AWS_SECRET_ACCESS_KEY --repo "nom d'utilisateur/nom du repo"  
+Exemple: gh secret set AWS_ACCESS_KEY_ID --repo freesavior/Curriculum-vitae-online
+et vous coller votre accès key 
 
 # Pour vérifier que les secrets ont été bien configuréés :
 gh secret list --repo "nom d'utilisateur/nom du repo"                  
